@@ -2,6 +2,7 @@ import express from "express";
 
 const PORT = 5000;
 const app = express();
+const router = express.Router();
 
 app.use(express.static("static"));
 app.use(express.json());
@@ -13,3 +14,9 @@ app.use((_req, res, next) => {
 
   next();
 });
+
+router.post("/loremIpsum", (req, res) => {
+  res.json({ test: "test" });
+});
+
+app.use(router);
