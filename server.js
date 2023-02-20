@@ -23,13 +23,34 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
+const MAX_SENTENCES = 30;
+const MIN_SENTENCES = 1;
+let prompt;
+
 router.post("/loremIpsum", async (req, res) => {
+  let { theme, sentences } = req.body;
+
+  if (sentences === "") {
+    sentences = Math.floor(Math.random() * MAX_SENTENCES) + MIN_SENTENCES;
+  }
+
+  if (theme === "") {
+    prompt = `
+      Napiš mi náhodné věty,
+      které navazují na sebe a oddělují se tečkou ve stylu lorem ipsum
+      které mají přesně ${sentences} vět`;
+  } else {
+    prompt = `
+      Napiš mi náhodné věty,
+      které navazují na sebe a oddělují se tečkou ve stylu lorem ipsum na téma ${theme}
+      které mají přesně ${sentences} vět`;
+  }
+
   const response = await openai.createCompletion({
     model: "text-davinci-003",
-    prompt:
-      "Napiš mi náhodné věty, které navazují na sebe a oddělují se tečkou ve stylu lorem ipsum, které mají přesně 30 vět.",
+    prompt: prompt,
     temperature: 0.5,
-    max_tokens: 1000,
+    max_tokens: 700,
   });
   console.log(response.data.choices[0].text);
 });

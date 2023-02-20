@@ -4,10 +4,14 @@ const form = document.getElementById("form");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  const theme = document.getElementById("inputTheme").value;
+  const sentences = document.getElementById("inputSentences").value;
+
   const response = await fetch(`${localHost}/loremIpsum`, {
     method: "POST",
     body: JSON.stringify({
-      test: "test",
+      theme,
+      sentences,
     }),
     headers: {
       "Content-Type": "application/json",
