@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="main-container">
-      <h1>České lorem ipsum</h1>
+      <h2>České lorem ipsum</h1>
       <form id="form">
         <label for="">Zadejte téma (prazdné bez tématu): </label>
         <input id="inputTheme" type="text" />
@@ -22,6 +22,20 @@
         <br />
         <button type="submit">Vygenerovat</button>
       </form>
+      <br>
+      <br>
+      <h2>Aktuální hodnoty</h2>
+      <div id="values-container">
+        <div id="values-first-row">
+          <p>Bitcoin v CZK: <b><span id="bitcoin-czk"></span></b></p>
+          <p>Bitcoin v EUR: <b><span id="bitcoin-eur"></span></b></p>
+          <p>Bitcoin v USD: <b><span id="bitcoin-usd"></span></b></p>
+        </div>
+        <div id="values-second-row">
+          <p>EURO v CZK: <b><span id="eur-czk"></span></b></p>
+          <p>USD v CZK: <b><span id="usd-czk"></span></b></p>
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>

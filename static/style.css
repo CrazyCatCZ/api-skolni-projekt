@@ -4,3 +4,12 @@
   flex-direction: column;
   justify-content: center;
 }
+
+#values-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#values-container div {
+  margin: 0em 0em 0em 2em;
+}
