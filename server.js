@@ -59,8 +59,8 @@ router.post("/loremIpsum", async (req, res) => {
   const response = await openai.createCompletion({
     model: "text-davinci-003",
     prompt: prompt,
-    temperature: 7,
-    max_tokens: 400,
+    temperature: 0.6,
+    max_tokens: 600,
   });
 
   const data = response.data.choices[0].text;
