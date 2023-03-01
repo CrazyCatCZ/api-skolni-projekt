@@ -1,6 +1,6 @@
 # api-skolni-projekt
 
-### API využity v tomto projektu
+### API využita v tomto projektu
 
 - České lorem ipsum: [OpenAI API](https://openai.com/blog/openai-api)
 - Aktualní hodnoty: [currency-api](https://github.com/fawazahmed0/currency-api)
