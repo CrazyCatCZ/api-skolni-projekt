@@ -60,7 +60,7 @@ router.post("/loremIpsum", async (req, res) => {
     model: "text-davinci-003",
     prompt: prompt,
     temperature: 0.6,
-    max_tokens: 10000,
+    max_tokens: 1000,
   });
 
   const data = response.data.choices[0].text;
@@ -68,3 +68,4 @@ router.post("/loremIpsum", async (req, res) => {
 });
 
 app.use(router);
+w;
