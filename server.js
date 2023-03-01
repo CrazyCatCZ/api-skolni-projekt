@@ -63,6 +63,8 @@ router.post("/loremIpsum", async (req, res) => {
     max_tokens: 500,
   });
 
+  console.log(response);
+
   const data = response.data.choices[0].text;
   res.json(data);
 });
