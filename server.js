@@ -24,7 +24,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const MIN_SENTENCES = 1;
-const MAX_SENTENCES = 30;
+const MAX_SENTENCES = 20;
 let prompt;
 
 router.post("/loremIpsum", async (req, res) => {
@@ -38,12 +38,12 @@ router.post("/loremIpsum", async (req, res) => {
     prompt = `
       Napiš mi náhodné věty,
       které navazují na sebe a oddělují se tečkou ve stylu lorem ipsum
-      které mají přesně ${sentences} vět`;
+      které mají přesně ${sentences} vět v českém jazyce`;
   } else {
     prompt = `
       Napiš mi náhodné věty,
       které navazují na sebe a oddělují se tečkou ve stylu lorem ipsum na téma ${theme}
-      které mají přesně ${sentences} vět`;
+      které mají přesně ${sentences} vět v českém jazyce`;
   }
 
   const response = await openai.createCompletion({
@@ -53,10 +53,8 @@ router.post("/loremIpsum", async (req, res) => {
     max_tokens: 700,
   });
 
-  console.log(response)
-
-  const data = response.data.choices[0].text
-  res.json(data)
+  const data = response.data.choices[0].text;
+  res.json(data);
 });
 
 app.use(router);
