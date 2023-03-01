@@ -1,0 +1,4 @@
+API využitY v tomto projektu
+
+České lorem ipsum: OpenAI API
+Aktualní hodnoty: https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1
