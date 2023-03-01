@@ -23,8 +23,8 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-const MAX_SENTENCES = 30;
 const MIN_SENTENCES = 1;
+const MAX_SENTENCES = 30;
 let prompt;
 
 router.post("/loremIpsum", async (req, res) => {
@@ -52,7 +52,11 @@ router.post("/loremIpsum", async (req, res) => {
     temperature: 0.5,
     max_tokens: 700,
   });
-  console.log(response.data.choices[0].text);
+
+  console.log(response)
+
+  const data = response.data.choices[0].text
+  res.json(data)
 });
 
 app.use(router);
