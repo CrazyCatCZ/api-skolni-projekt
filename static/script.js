@@ -64,11 +64,13 @@ form.addEventListener("submit", async (e) => {
     headers: {
       "Content-Type": "application/json",
     },
-  }).catch((error) => {
-    location.reload();
   });
-
-  const data = await response.json();
-  loremInput.textContent = data;
-  loremButton.disabled = false;
+  try {
+    const data = await response.json();
+    loremInput.textContent = data;
+    loremButton.disabled = false;
+  } catch {
+    loremInput.textContent = "Text se nepodařilo vygenerovat";
+    loremButton.disabled = false;
+  }
 });
