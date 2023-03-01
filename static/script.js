@@ -2,6 +2,7 @@ const localHost = "http://localhost:5000";
 
 const form = document.getElementById("form");
 const loremInput = document.getElementById("lorem-input");
+const loremButton = document.getElementById("lorem-button");
 
 const bitcoinCZK = document.getElementById("bitcoin-czk");
 const bitcoinEUR = document.getElementById("bitcoin-eur");
@@ -48,6 +49,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  loremInput.textContent = "Text se generuje...";
+  loremButton.disabled = true;
+
   const theme = document.getElementById("inputTheme").value;
   const sentences = document.getElementById("inputSentences").value;
 
@@ -64,4 +68,5 @@ form.addEventListener("submit", async (e) => {
 
   const data = await response.json();
   loremInput.textContent = data;
+  loremButton.disabled = false;
 });
