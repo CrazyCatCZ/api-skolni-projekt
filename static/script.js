@@ -1,4 +1,4 @@
-const localHost = "http://localhost:5000";
+const BASE_URL = window.location.origin;
 
 const form = document.getElementById("form");
 const loremInput = document.getElementById("lorem-input");
@@ -55,7 +55,7 @@ form.addEventListener("submit", async (e) => {
   const theme = document.getElementById("inputTheme").value;
   const sentences = document.getElementById("inputSentences").value;
 
-  const response = await fetch(`${localHost}/loremIpsum`, {
+  const response = await fetch(`${BASE_URL}/loremIpsum`, {
     method: "POST",
     body: JSON.stringify({
       theme,
