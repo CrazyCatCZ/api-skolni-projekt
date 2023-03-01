@@ -64,7 +64,9 @@ form.addEventListener("submit", async (e) => {
     headers: {
       "Content-Type": "application/json",
     },
-  }).catch(location.reload());
+  }).catch((error) => {
+    location.reload();
+  });
 
   const data = await response.json();
   loremInput.textContent = data;
