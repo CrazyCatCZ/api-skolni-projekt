@@ -1,7 +1,7 @@
 const BASE_URL = window.location.origin;
 
 const form = document.getElementById("form");
-const loremInput = document.getElementById("lorem-input");
+const loremInput = document.getElementById("lorem-output");
 const loremButton = document.getElementById("lorem-button");
 
 const bitcoinCZK = document.getElementById("bitcoin-czk");
