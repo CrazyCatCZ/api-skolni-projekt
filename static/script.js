@@ -70,7 +70,8 @@ form.addEventListener("submit", async (e) => {
     loremInput.textContent = data;
     loremButton.disabled = false;
   } catch {
-    loremInput.textContent = "Text se nepodařil vygenerovat";
+    loremInput.textContent =
+      "Text se nepodařil vygenerovat. Zkuste snížit počet vět nebo změnit téma";
     loremButton.disabled = false;
   }
 });
