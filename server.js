@@ -26,7 +26,7 @@ const openai = new OpenAIApi(configuration);
 let prompt;
 let sentenceWord;
 const MIN_SENTENCES = 1;
-const MAX_SENTENCES = 20;
+const MAX_SENTENCES = 10;
 
 router.post("/loremIpsum", async (req, res) => {
   let { theme, sentences } = req.body;
